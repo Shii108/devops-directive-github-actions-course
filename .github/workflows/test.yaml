@@ -1,0 +1,10 @@
+name : testworkflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testjob:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "This is a test workflow to demonstrate the workflow_dispatch event."
