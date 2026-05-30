@@ -1,23 +1,22 @@
-name: testworkflow
+name : howisthisworking 
 
-"on":
+on:
   workflow_dispatch:
 
 jobs:
-  testjob:
+  test:
     runs-on: ubuntu-24.04
     steps:
-      - run: echo "Hello from an inline bash script in a GitHub Action Workflow!"
-  
-  anotherjon:
-    runs-on: ubuntu-24.04
-    steps:
-      - run : print("Hello from an inline python script in a GitHub Action Workflow!")
-        shell: python
+      - run : echo "this is hello world from job1 hahhahaha"
 
-  say-hello-action:
+  test2:
+    runs-on: ubuntu-24.04
+    needs: test3
+    steps:
+      - run : echo "this is hello world from job2 hahahahhahahahahahahha"
+    
+
+  test3:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/hello-world-javascript-action@081a6d193d1dcb38460df1e6927486d748730f9d # v1.
-        with:
-          who-to-greet: "from an action in the GitHub Action marketplace! 👋"
+      - run : echo "this is hello world from job3 hahhahaha"
